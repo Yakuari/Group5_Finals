@@ -22,8 +22,8 @@
 /* Ensure no horizontal scrolling */
 html, body {
     overflow-x: hidden;
-    width: 100%;
-    max-width: 100%;
+    width: auto;
+    max-width: auto;
 }
 
 /* Navigation Styles */
@@ -96,6 +96,7 @@ nav {
     display: flex;
     gap: 15px;
     align-items: center;
+    margin-left: auto; /* Push buttons to the far right */
 }
 
 .nav-buttons button {

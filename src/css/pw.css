@@ -1,0 +1,109 @@
+body {
+    margin: 0;
+    padding: 0;
+    font-family: sans-serif;
+
+    background-image: url(../img/gym1.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    height: 100vh; 
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.wrapper {
+    background-color: rgba(255, 255, 255, 0.8);
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    max-width: 400px;
+    width: 90%; /* Adjust for responsiveness */
+    text-align: center;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+form {
+    background-color: rgba(255, 255, 255, 0.8); 
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(3, 3, 3, 0.8); 
+    text-align: center;
+    width: 100%; 
+    max-width: 300px;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+input { 
+    margin-top: 20px;
+    padding: 15px;
+    border: 1px solid black;
+    border-radius: 5px;
+    font-size: 16px;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+button {
+    margin-top: 20px;
+    padding: 10px;
+    background-color: rgba(23, 182, 245, 0.8);
+    border-radius: 5px;
+    font-size: 15px;
+    cursor: pointer;
+    transition: cubic-bezier(0.165, 0.84, 0.44, 1);
+    width: 100%;
+}
+
+button:hover {
+    background-color: #45a049;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) { /* Tablets */
+    .wrapper {
+        width: 80%;
+        padding: 15px;
+    }
+
+    form {
+        max-width: 100%;
+    }
+}
+
+@media (max-width: 576px) { /* Mobile Phones (Small) */
+    .wrapper {
+        width: 90%;
+        padding: 10px;
+    }
+
+    input {
+        font-size: 14px;
+        padding: 10px;
+    }
+
+    button {
+        font-size: 14px;
+        padding: 8px;
+    }
+}
+
+@media (max-width: 1200px) { /* Laptops and larger tablets */
+    .wrapper {
+        width: 60%;
+    }
+
+    form {
+        width: 100%;
+    }
+}

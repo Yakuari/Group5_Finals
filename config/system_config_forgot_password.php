@@ -20,7 +20,7 @@ if (isset($_POST['submit'])) {
         // $stmt->execute([$email, $token, $expiry]);
 
         // Send the reset link via email
-        $resetLink = "http://localhost/Finals5/reset-password.php?id=".$user["id"]."token=" . $token;
+        $resetLink = "https://ironforgegym.site/reset-password.php?id=".$user["id"]."token=" . $token;
         $subject = "Password Reset Request";
         $message = "Click the link to reset your password: " . $resetLink;
 
