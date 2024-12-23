@@ -1,15 +1,31 @@
 <?php
 class Dbh {
     // Database configuration properties
-    private $host = 'localhost';
-    private $dbname = 'itelec-finals';
-    private $username = 'root';
-    private $password = '';
+    private $host;
+    private $db_name;
+    private $username;
+    private $password;
+    public $conn;
+    public function __construct()
+    {
+        if($_SERVER['SERVER_NAME'] === 'localhost' || $_SERVER['SERVER_ADDR'] === '127.0.0.1' || $_SERVER['SERVER_ADDR'] === '192.168.1.72'){
+            $this->host = "localhost";
+            $this->db_name = "itelec-finals";
+            $this->username = "root";
+            $this->password = "";
+        }
+        else{
+            $this->host = "localhost";
+            $this->db_name = "u175342239_itelec_finals";
+            $this->username = "u175342239_Yurit";
+            $this->password = "Itelec123";
+        }
+    }
 
     public function connect() {
         try {
             // Create a new PDO instance
-            $dsn = "mysql:host={$this->host};dbname={$this->dbname}";
+            $dsn = "mysql:host={$this->host};dbname={$this->db_name}";
             $dbh = new PDO($dsn, $this->username, $this->password);
 
             // Set PDO attributes
