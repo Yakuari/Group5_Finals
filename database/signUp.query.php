@@ -1,9 +1,15 @@
 <?php
 require_once __DIR__ . '/dbh.php';
 
-class signUp extends Dbh {
+// class signUp extends Dbh {
+class signUpQuery {
     protected function setUser($uid, $pass, $email, $role, $amount, $month) {
-        $stmt = $this->connect()->prepare(
+        $db = (new Dbh())->connect();
+        // $stmt = $this->connect()->prepare(
+        //     'INSERT INTO users (user_uid, user_pass, user_email, user_role, user_amount, user_month) 
+        //     VALUES (?, ?, ?, ?, ?, ?)'
+        // );
+        $stmt = $db->prepare(
             'INSERT INTO users (user_uid, user_pass, user_email, user_role, user_amount, user_month) 
             VALUES (?, ?, ?, ?, ?, ?)'
         );
@@ -22,7 +28,8 @@ class signUp extends Dbh {
     }
 
     protected function checkUser($uid, $email) {
-        $stmt = $this->connect()->prepare(
+        $db = (new Dbh())->connect();
+        $stmt = $db->prepare(
             'SELECT user_uid FROM users WHERE user_uid = ? OR user_email = ?'
         );
 

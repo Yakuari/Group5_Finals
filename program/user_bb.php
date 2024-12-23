@@ -73,6 +73,8 @@ if (!$user) {
             <li><a href="../user_landing_page.php#subscription">Subscription</a></li>
             <li><a href="../user_landing_page.php#booking">Booking</a></li>
             <li><a href="../user_landing_page.php#about-us">About Us</a></li>
+            <li><a href="../user.php ">User Profile</a></li>
+            <li><a href="../user.php?logout=true">Logout</a></li>
             <button class="sidebar-close-btn">&times;</button>
         </ul>
 

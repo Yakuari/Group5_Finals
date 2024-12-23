@@ -47,7 +47,7 @@
     <div class="popup login-popup">
         <div class="close-btn">&times;</div>
         <div class="form">
-            <form action="config/system_config_signIn.php" method="POST">
+            <form action="../config/system_config_signIn.php" method="POST">
                 <h2>Sign In</h2>
                 <div class="form-element">
                     <input type="email" name="email" placeholder="Email" required>
@@ -67,7 +67,7 @@
     <div class="popup signup-popup">
         <div class="close-btn">&times;</div>
         <div class="form">
-            <form action="config/system_config_signup.php" method="POST">
+            <form action="../config/system_config_signup.php" method="POST">
                 <h2>Register Here</h2>
                 <div class="form-element">
                     <input type="text" name="uid" placeholder="Username" required>

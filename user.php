@@ -169,7 +169,8 @@ if (isset($_POST['redeem_coupon'])) {
                 <li><a href="user_landing_page.php#program">Program</a></li>
                 <li><a href="user_landing_page.php#subscription">Subscription</a></li>
                 <li><a href="user_landing_page.php#booking">Booking</a></li>
-                <button class="sidebar-close-btn">&times;</button>
+                <li><a href="user.php ">User  Profile</a></li>
+                <li><a href="user.php?logout=true">Logout</a></li>
             </ul>
         
             <div class="wrapper">

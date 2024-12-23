@@ -6,21 +6,19 @@ class Dbh {
     private $username;
     private $password;
     public $conn;
-
     public function __construct()
     {
-        // Check if the server is localhost or a specific IP
-        if ($_SERVER['SERVER_NAME'] === 'localhost' || $_SERVER['SERVER_ADDR'] === '127.0.0.1' || $_SERVER['SERVER_ADDR'] === '192.168.1.72') {
+        if($_SERVER['SERVER_NAME'] === 'localhost' || $_SERVER['SERVER_ADDR'] === '127.0.0.1' || $_SERVER['SERVER_ADDR'] === '192.168.1.72'){
             $this->host = "localhost";
             $this->db_name = "itelec-finals";
             $this->username = "root";
             $this->password = "";
-        } else {
-            // Production database credentials
-            $this->host = "localhost"; // Ensure this is correct
-            $this->db_name = "u175342239_itelec_finals"; // Ensure this is correct
-            $this->username = "u175342239_Yurit"; // Ensure this is correct
-            $this->password = "Itelec123"; // Ensure this is correct
+        }
+        else{
+            $this->host = "localhost";
+            $this->db_name = "u175342239_itelec_finals";
+            $this->username = "u175342239_Yurit";
+            $this->password = "Itelec123";
         }
     }
 

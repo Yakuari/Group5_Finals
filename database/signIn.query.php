@@ -1,8 +1,13 @@
 <?php 
-class signInQuery extends Dbh {
+require_once 'dbh.php';
+// class signInQuery extends Dbh {
+
+class signInQuery {
     protected function getUser($email, $pass) {
+        $db = (new Dbh())->connect();
         // Query to get user details by email, including user_type
-        $stmt = $this->connect()->prepare('SELECT * FROM users WHERE user_email = ?;');
+        // $stmt = $this->connect()->prepare('SELECT * FROM users WHERE user_email = ?;');
+        $stmt = $db->prepare('SELECT * FROM users WHERE user_email = ?;');
         
         if (!$stmt->execute([$email])) {
             $stmt = null;

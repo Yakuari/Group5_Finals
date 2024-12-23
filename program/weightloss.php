@@ -35,11 +35,11 @@
 
     <!-- Sidebar -->
     <ul class="sidebar">
-            <li><a href="#home">Home</a></li>
-            <li><a href="#program">Program</a></li>
-            <li><a href="#subscription">Subscription</a></li>
-            <li><a href="#booking">Booking</a></li>
-            <li><a href="#about-us">About Us</a></li>
+            <li><a href="../index.php#home">Home</a></li>
+            <li><a href="../index.php#program">Program</a></li>
+            <li><a href="../index.php#subscription">Subscription</a></li>
+            <li><a href="../index.php#booking">Booking</a></li>
+            <li><a href="../index.php#about-us">About Us</a></li>
             <button class="sidebar-close-btn">&times;</button>
         </ul>
 
@@ -47,7 +47,7 @@
     <div class="popup login-popup">
         <div class="close-btn">&times;</div>
         <div class="form">
-            <form action="config/system_config_signIn.php" method="POST">
+            <form action="../config/system_config_signIn.php" method="POST">
                 <h2>Sign In</h2>
                 <div class="form-element">
                     <input type="email" name="email" placeholder="Email" required>
@@ -67,7 +67,7 @@
     <div class="popup signup-popup">
         <div class="close-btn">&times;</div>
         <div class="form">
-            <form action="config/system_config_signup.php" method="POST">
+            <form action="../config/system_config_signup.php" method="POST">
                 <h2>Register Here</h2>
                 <div class="form-element">
                     <input type="text" name="uid" placeholder="Username" required>

@@ -10,7 +10,7 @@ if (session_status() === PHP_SESSION_NONE) {
     session_start();
 }
 
-class Admin extends signUp
+class Admin extends signUpQuery
 {
     private $email;
     private $uid;

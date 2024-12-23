@@ -84,7 +84,8 @@ if (isset($_POST['buy_subscription'])) {
         <li><a href="#subscription">Subscription</a></li>
         <li><a href="#booking">Booking</a></li>
         <li><a href="#about-us">About Us</a></li>
-        <button class="sidebar-close-btn">&times;</button>
+        <li><a href="user.php ">User  Profile</a></li>
+        <li><a href="user.php?logout=true">Logout</a></li>
     </ul>
 
     <main id="home">

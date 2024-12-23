@@ -54,9 +54,7 @@ nav {
     padding: 0;
     margin: 0;
     gap: 20px;
-    margin-left: -25rem; /* Move the nav-links slightly to the left */
 }
-
 
 .nav-links li {
     position: relative;
@@ -75,6 +73,7 @@ nav {
 .nav-links a:hover {
     background-color: var(--color-gray);
 }
+
 /* User Dropdown Menu */
 .dropdown {
     position: absolute;
@@ -170,7 +169,7 @@ th, td {
 }
 
 th {
-    background-color: var(--color-gold-dark);
+ background-color: var(--color-gold-dark);
     color: var(--color-white);
 }
 
@@ -232,21 +231,16 @@ p[style*="color: red"] {
 
 /* Responsive Design */
 @media (max-width: 768px) {
-    table {
-        font-size: 14px;
-    }
-
-    th, td {
-        padding: 10px;
-    }
-
-    button {
-        font-size: 12px;
-    }
-
     nav {
         flex-direction: column;
         position: relative;
+    }
+
+    .nav-links {
+        flex-direction: column;
+        align-items: center;
+        gap: 10px;
+        margin-left: 0; /* Reset margin for mobile */
     }
 
     .dropdown {
@@ -262,13 +256,36 @@ p[style*="color: red"] {
         box-shadow: none;
     }
 
-    .nav-container {
-        justify-content: center;
+    table {
+        font-size: 14px;
+        overflow-x: auto; /* Enable horizontal scrolling */
+        display: block; /* Make table block for scrolling */
+        white-space: nowrap; /* Prevent table cells from wrapping */
     }
 
-    .nav-links {
-        flex-direction: column;
-        align-items: center;
-        gap: 10px;
+    tbody {
+        display: block; /* Allow tbody to scroll */
+        overflow-x: auto; /* Enable horizontal scrolling */
+        white-space: nowrap; /* Prevent table cells from wrapping */
     }
+
+    th, td {
+        padding: 10px;
+    }
+
+    button {
+        font-size: 12px;
+    }
+}
+
+@media (min-width: 769px) and (max-width: 1024px) {
+    /* Tablet Styles */
+    table {
+        font-size: 16px;
+    }
+
+    th, td {
+        padding: 12px;
+    }
+
 }

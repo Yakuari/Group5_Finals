@@ -9,6 +9,7 @@
     <link rel="stylesheet" href="src/css/nav.css">
     <link rel="stylesheet" href="src/css/booking.css">
     <link rel="stylesheet" href="src/css/about_us.css">
+    <link rel="stylesheet" href="src/css/dropdown_menu2.css"> 
 </head>
 
 <body>
