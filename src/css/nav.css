@@ -1,0 +1,227 @@
+/* Root Colors */
+:root {
+    --main-color: #0D0D0D;
+    --sub-color: #efefef;
+    --text-color: #000000;
+    --main-font: "Montserrat", sans-serif;
+    --button-color: #FFD700;
+    --form-color: #222222;
+    --primary-gradient: linear-gradient(to right, #3a7bd5, #3a6073);
+    --button-hover-color: #FFC300;
+    --focus-color: #ffcc00;
+}
+
+/* Basic Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: var(--main-font);
+}
+
+/* Ensure no horizontal scrolling */
+html, body {
+    overflow-x: hidden;
+    width: 100%;
+    max-width: 100%;
+}
+
+/* Navigation Styles */
+nav {
+    width: 100%;
+    padding: 1rem 2rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: var(--main-color);
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    position: relative;
+    z-index: 10;
+}
+
+/* Logo Container */
+.logo-container {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.logo {
+    height: 80px;
+    width: auto;
+}
+
+.logo-name {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: var(--focus-color);
+}
+
+/* Navigation Links */
+.nav-links {
+    display: flex;
+    gap: 1.5rem;
+    list-style: none;
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: var(--sub-color);
+    font-weight: 500;
+    transition: color 0.3s ease;
+    position: relative;
+}
+
+.nav-links a:hover {
+    color: var(--button-color);
+}
+
+.nav-links a::after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 2px;
+    bottom: -5px;
+    left: 0;
+    background-color: var(--button-color);
+    transition: width 0.3s ease;
+}
+
+.nav-links a:hover::after {
+    width: 100%;
+}
+
+/* Navigation Buttons */
+.nav-buttons {
+    display: flex;
+    gap: 15px;
+    align-items: center;
+}
+
+.nav-buttons button {
+    padding: 10px 16px;
+    font-size: 14px;
+    color: var(--main-color);
+    background: var(--button-color);
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-weight: 600;
+    transition: all 0.3s ease;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+.nav-buttons button:hover {
+    background: var(--button-hover-color);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+/* Sidebar Toggle Button */
+.menu-button {
+    display: none;
+    background: none;
+    border: none;
+    font-size: 1.5rem;
+    cursor: pointer;
+    color: var(--sub-color);
+}
+
+/* Sidebar */
+.sidebar {
+    position: fixed;
+    top: 0;
+    right: -100%;
+    width: 250px;
+    height: 100vh;
+    background-color: var(--main-color);
+    padding: 2rem;
+    list-style: none;
+    transition: right 0.3s ease;
+    box-shadow: -2px 0 5px rgba(0, 0, 0, 0.2);
+    z-index: 1000;
+}
+
+.sidebar.active {
+    right: 0;
+}
+
+.sidebar a {
+    display: block;
+    padding: 1rem 0;
+    text-decoration: none;
+    color: var(--sub-color);
+    font-weight: 500;
+    transition: color 0.3s ease;
+}
+
+.sidebar a:hover {
+    color: var(--button-color);
+}
+
+/* Popup Styles */
+.popup {
+    position: fixed;
+    top: -150%;
+    left: 50%;
+    opacity: 0;
+    transform: translate(-50%, -50%) scale(1.25);
+    width: 400px;
+    background: white;
+    box-shadow: 0;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+    border-radius: 15px;
+    transition: all 0.3s ease;
+    z-index: 1100;
+    visibility: hidden;
+    padding: 30px;
+    color: var(--main-color);
+}
+
+.popup.active {
+    top: 50%;
+    opacity: 1;
+    transform: translate(-50%, -50%) scale(1);
+    visibility: visible;
+}
+
+/* Media Queries */
+
+@media screen and (max-width: 768px) {
+    nav {
+        padding: 0.8rem 1rem;   
+    }
+
+    .nav-links {
+        display: none; /* Hide navigation links on mobile */
+    }
+
+    .menu-button {
+        display: block; /* Show the menu button on mobile */
+    }
+
+    .nav-buttons button {
+        padding: 8px 12px;
+        font-size: 12px;
+    }
+}
+
+@media screen and (max-width: 380px) {
+    nav {
+        padding: 0.5rem 1rem;
+    }
+
+    .logo {
+        height: 50px;
+    }
+
+    .nav-buttons button {
+        padding: 6px 10px;
+        font-size: 10px;
+    }
+
+    .popup {
+        width: 90%;
+        padding: 20px;
+    }
+} 

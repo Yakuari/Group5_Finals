@@ -1,0 +1,574 @@
+/* Root Colors */
+:root {
+    --main-color: #0D0D0D;
+    --sub-color: #efefef;
+    --text-color: #000000;
+    --main-font: "Montserrat", sans-serif;
+    --button-color: #FFD700;
+    --form-color: #222222;
+    --primary-gradient: linear-gradient(to right, #3a7bd5, #3a6073);
+    --button-hover-color: #FFC300;
+    --focus-color: #ffcc00;
+}
+
+/* Modern CSS Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Inter', system-ui, -apple-system, sans-serif;
+    line-height: 1.6;
+    color: var(--text-color);
+    background-color: var(--form-color)
+}
+
+/* Header Styles */
+header {
+    background-color: var(--main-color);
+    padding: 1rem 2rem;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Navigation Styles */
+nav {
+    width: 100%;
+    padding: 1rem 2rem;
+    display: flex;
+    justify-content: space-between; /* Spread the logo and buttons */
+    align-items: center;
+    background-color: var(--main-color);
+    position: relative;
+}
+
+/* Logo Container */
+.logo-container {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.logo {
+    height: 100px;
+    width: auto;
+}
+
+.logo-name {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: var(--focus-color);
+}
+
+/* Center the nav links */
+.nav-links {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%); /* Center the nav links horizontally */
+    display: flex;
+    gap: 2rem; /* Space between each link */
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: var(--sub-color);
+    font-weight: 500;
+    transition: color 0.3s ease;
+    position: relative;
+}
+
+.nav-links a:hover {
+    color: var(--button-color);
+}
+
+.nav-links a::after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 2px;
+    bottom: -5px;
+    left: 0;
+    background-color: var(--button-color);
+    transition: width 0.3s ease;
+}
+
+.nav-links a:hover::after {
+    width: 100%;
+}
+
+/* Navigation Buttons */
+.nav-buttons {
+    display: flex;
+    gap: 2rem; /* Add gap between buttons */
+}
+
+.nav-buttons button {
+    padding: 10px 20px;
+    font-size: 14px;
+    color: var(--main-color);
+    background: var(--button-color);
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-weight: 600;
+    transition: all 0.3s ease;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+.nav-buttons button:hover {
+    background: var(--button-hover-color);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+
+#show-login {
+    background-color: transparent;
+    color: var(--button-color);
+    border: 2px solid var(--button-color);
+}
+
+#show-signup {
+    background-color: var(--button-color);
+    color: var(--main-color);
+}
+
+#show-login:hover {
+    background-color: var(--button-color);
+    color: var(--main-color);
+}
+
+/* Sidebar Toggle Button */
+.menu-button {
+    display: none;
+    background: none;
+    border: none;
+    font-size: 1.5rem;
+    cursor: pointer;
+    padding: 0.5rem;
+    color: var(--sub-color);
+}
+
+/* Sidebar */
+.sidebar {
+    position: fixed;
+    top: 0;
+    right: -250px;
+    width: 250px;
+    height: 100vh;
+    background-color: var(--main-color);
+    padding: 2rem;
+    list-style: none;
+    transition: right 0.3s ease;
+    box-shadow: -2px 0 5px rgba(0, 0, 0, 0.2);
+    z-index: 1000;
+}
+
+.sidebar.active {
+    right: 0;
+}
+
+.sidebar a {
+    display: block;
+    padding: 1rem 0;
+    text-decoration: none;
+    color: var(--sub-color);
+    font-weight: 500;
+    transition: color 0.3s ease;
+}
+
+.sidebar a:hover {
+    color: var(--button-color);
+}
+
+/* Sidebar Close Button */
+.sidebar-close-btn {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    font-size: 2rem;
+    color: var(--sub-color);
+    background: none;
+    border: none;
+    cursor: pointer;
+    transition: color 0.3s ease;
+}
+
+.sidebar-close-btn:hover {
+    color: var(--button-color);
+}
+
+/* Popup Styles */
+.popup {
+    position: fixed;
+    top: -150%;
+    left: 50%;
+    opacity: 0;
+    transform: translate(-50%, -50%) scale(1.25);
+    width: 400px;
+    background: white;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+    border-radius: 15px;
+    transition: all 0.3s cubic-bezier(0.68, -0.55, 0.27, 1.55);
+    z-index: 1100;
+    visibility: hidden;
+    padding: 30px;
+    color: var(--main-color);
+}
+
+.popup.active {
+    top: 50%;
+    opacity: 1;
+    transform: translate(-50%, -50%) scale(1);
+    visibility: visible;
+}
+
+.popup .close-btn {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    width: 30px;
+    height: 30px;
+    background: #ff4d4d;
+    color: white;
+    text-align: center;
+    line-height: 30px;
+    border-radius: 50%;
+    cursor: pointer;
+    font-size: 20px;
+    transition: background 0.3s ease;
+}
+
+.popup .close-btn:hover {
+    background: #ff1a1a;
+}
+
+.popup .form {
+    text-align: center;
+}
+
+.popup .form h2 {
+    margin-bottom: 20px;
+    color: var(--main-color);
+}
+
+.form-element {
+    margin-bottom: 15px;
+}
+
+.form-element input {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    font-size: 1rem;
+}
+
+.popup button[type="submit"] {
+    width: 100%;
+    padding: 12px;
+    background: var(--button-color);
+    color: var(--main-color);
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background 0.3s ease;
+}
+
+.popup button[type="submit"]:hover {
+    background: var(--button-hover-color);
+}
+
+
+/* Media Queries */
+@media screen and (max-width: 768px) {
+    nav {
+        padding: 0.8rem 1rem;
+        width: 100%;
+        /* Ensure the nav bar doesn't overflow */
+        max-width: 100vw;
+        position: relative;
+        display: flex;
+        justify-content: space-between; /* This will help space elements evenly */
+    }
+
+    .nav-links {
+        display: none;
+    }
+
+    /* Logo adjustments */
+    .logo-container {
+        width: auto;
+        flex: 0 0 auto; /* Prevent logo from growing or shrinking */
+    }
+
+    .logo {
+        height: 60px; /* Proportionally reduced for mobile */
+        width: auto;
+    }
+
+    .logo-name {
+        display: none;
+    }
+
+    /* Button container adjustments */
+    .nav-buttons {
+        display: flex;
+        gap: 0.4rem; /* Reduced gap */
+        margin: 0 0.5rem; /* Even spacing */
+        flex: 0 0 auto; /* Prevent shrinking */
+    }
+
+    .nav-buttons button {
+        padding: 0.3rem 0.6rem;
+        font-size: 0.8rem;
+        /* Ensure buttons remain compact */
+        white-space: nowrap;
+    }
+
+    /* Menu button adjustments */
+    .menu-button {
+        display: block;
+        padding: 0.3rem;
+        font-size: 1.2rem;
+        margin: 0; /* Remove margin */
+        flex: 0 0 auto; /* Prevent shrinking */
+    }
+
+    /* Make layout more compact on very small screens */
+    nav > * {
+        margin: 0 2px; /* Minimal spacing between elements */
+    }
+
+    /* Sidebar adjustments */
+    .sidebar {
+        width: 250px;
+        right: -250px;
+    }
+}
+
+/* Extra small screen optimization */
+@media screen and (max-width: 380px) {
+    nav {
+        padding: 0.8rem 0.5rem; /* Even smaller padding */
+    }
+
+    .logo {
+        height: 45px; /* Further reduced for very small screens */
+        width: auto;
+    }
+
+    .nav-buttons button {
+        padding: 0.25rem 0.5rem;
+        font-size: 0.75rem;
+    }
+
+    .menu-button {
+        font-size: 1.1rem;
+    }
+}
+
+/* Ensure no horizontal scrolling on any screen size */
+html, body {
+    overflow-x: hidden;
+    width: 100%;
+    max-width: 100%;
+}
+
+@media (max-width: 600px) {
+    .popup {
+        width: 90%;
+        padding: 20px;
+        top: 5%;
+        transform: translate(-50%, 0);
+        font-size: 14px;
+    }
+
+    .popup .close-btn {
+        width: 25px;
+        height: 25px;
+        font-size: 16px;
+    }
+
+    .popup .form h2 {
+        font-size: 1.5rem;
+    }
+
+    .form-element input {
+        padding: 8px;
+        font-size: 0.9rem;
+    }
+
+    .popup button[type="submit"] {
+        padding: 10px;
+        font-size: 1rem;
+    }
+}
+
+
+/* Title Section */
+.body-title {
+    background: var(--form-color);
+    padding: 4rem 2rem;
+    text-align: center;
+    color: #fff;
+    margin-bottom: 3rem;
+}
+
+.body-title h1 {
+    font-size: 3rem;
+    font-weight: 800;
+    color: var(--focus-color);
+}
+
+/* Exercise Cards */
+.fitness-choices {
+    max-width: 1200px;
+    margin: 0 auto 3rem;
+    padding: 0 2rem;
+    display: flex;
+    gap: 3rem;
+    align-items: flex-start;
+    border: none;
+    background: #333333;
+    border-radius: 16px;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.fitness-choices:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1),
+                0 10px 10px -5px rgba(0, 0, 0, 0.04);
+}
+
+.fitness-choices img {
+    width: 45%;
+    height: 400px;
+    object-fit: cover;
+    border-radius: 12px;
+    margin: 2rem;
+}
+
+.fitness-choices div {
+    flex: 1;
+    padding: 2rem 2rem 2rem 0;
+}
+
+.fitness-choices h1 {
+    font-size: 2rem;
+    font-weight: 700;
+    color: var(--button-color);
+    margin-bottom: 1rem;
+    letter-spacing: -0.5px;
+}
+
+.fitness-choices p {
+    font-size: 1.1rem;
+    color: var(--sub-color);
+    margin-bottom: 1.5rem;
+    line-height: 1.7;
+}
+
+.fitness-choices ul {
+    list-style: none;
+    margin-top: 1.5rem;
+}
+
+.fitness-choices ul li {
+    position: relative;
+    padding-left: 1.5rem;
+    margin-bottom: 1rem;
+    color: var(--sub-color);
+    font-size: 1.05rem;
+}
+
+.fitness-choices ul li::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0.75rem;
+    width: 6px;
+    height: 6px;
+    background-color: var(--primary-gradient);
+    border-radius: 50%;
+}
+
+.fitness-choices ul li strong {
+    color: var(--sub-color);
+    font-weight: 600;
+}
+
+/* Responsive Design */
+@media (max-width: 1024px) {
+    .fitness-choices {
+        flex-direction: column;
+        padding: 1.5rem;
+        gap: 1.5rem;
+    }
+
+    .fitness-choices img {
+        width: 100%;
+        height: 300px;
+        margin: 0;
+    }
+
+    .fitness-choices div {
+        padding: 0;
+    }
+}
+
+@media (max-width: 768px) {
+
+    .body-title h1 {
+        font-size: 2.5rem;
+    }
+
+    .fitness-choices h1 {
+        font-size: 1.75rem;
+    }
+}
+
+@media (max-width: 480px) {
+    header {
+        padding: 1rem;
+    }
+
+    .body-title h1 {
+        font-size: 2rem;
+    }
+
+    .fitness-choices {
+        padding: 1rem;
+    }
+
+    .fitness-choices h1 {
+        font-size: 1.5rem;
+    }
+
+    .fitness-choices p {
+        font-size: 1rem;
+    }
+}
+
+/* Smooth Scrolling */
+html {
+    scroll-behavior: smooth;
+}
+
+/* Animation for card entrance */
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}

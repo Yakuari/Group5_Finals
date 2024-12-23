@@ -1,0 +1,113 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@500&display=swap');
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+/* About us Section */
+
+.about-us-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    gap: 30px;
+    text-align: center;
+    padding: 40px;
+    margin: 20px 0;
+    min-height: 100vh;
+    
+}
+
+.about-us-container div {
+    flex: 1 1 30%;
+    max-width: 350px;
+    max-height: 350px;
+    padding: 20px;
+    background: rgba(0, 0, 0, 0.3); /* Darker semi-transparent box */
+    border-radius: 8px;
+    margin: 10px;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+
+.about-us-container div:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 12px 24px rgba(0, 0, 0, 0.2);
+}
+
+.about-us-container h2 {
+    color:var(--button-hover-color);
+    margin-bottom: 20px;
+    font-size: 1.8rem; /* Slightly larger for better visibility */
+    font-weight: 600;
+    line-height: 1.4;
+}
+
+.about-us-container p {
+    font-size: 1rem;
+    line-height: 1.6;
+    color: var(--sub-color);
+    font-family: var(--main-font);
+}
+
+.about-us-title {
+    padding: 20px 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: rgba(34, 34, 34, 0.9);
+    width: 100%;
+    margin-bottom: 40px;
+}
+
+.about-us-title h1 {
+    color: var(--button-hover-color);
+    font-size: 2.5rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.social-icons {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    margin-top: 20px;
+}
+
+.social-icons img {
+    border-radius: 50%;
+    width: 40px; 
+    height: 40px;
+    object-fit: cover;
+    transition: transform 0.3s ease, filter 0.3s ease;
+}
+
+.social-icons img:hover {
+    transform: scale(1.1);
+    filter: brightness(1.2);
+}
+
+@media (max-width: 768px) {
+    .about-us-container {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .about-us-container div {
+        flex: 1 1 100%;
+        max-width: 100%;
+        margin-bottom: 20px;
+    }
+
+    .about-us-title h1 {
+        font-size: 2rem;
+    }
+
+    .social-icons img {
+        width: 35px;
+        height: 35px;
+    }
+}

@@ -1,0 +1,84 @@
+/* Root Variables */
+:root {
+    --main-color: #0D0D0D;
+    --sub-color: #efefef;
+    --text-color: #000000;
+    --main-font: "Montserrat", sans-serif;
+    --button-color: #FFD700;
+    --form-color: #222222;
+    --primary-gradient: linear-gradient(to right, #3a7bd5, #3a6073);
+    --button-hover-color: #FFC300;
+}
+
+/* Header Styles */
+header {
+    background-color: var(--main-color);
+    padding: 1rem 2rem;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Navigation Styles */
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo-container {
+    display: flex;
+    align-items: center;
+}
+
+.logo {
+    height: 50px;
+}
+
+.logo-name {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: var(--button-hover-color);
+    margin-left: 15px;
+}
+
+/* Dropdown Menu */
+.nav-buttons {
+    position: relative;
+}
+
+.dropdown {
+    cursor: pointer;
+    color: var(--sub-color);
+}
+
+.dropdown-menu {
+    display: none;
+    position: absolute;
+    background-color: var(--main-color);
+    min-width: 160px;
+    z-index: 1;
+}
+
+.dropdown:hover .dropdown-menu {
+    display: block;
+}
+
+.dropdown-menu a {
+    color: var(--sub-color);
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+}
+
+.dropdown-menu a:hover {
+    background-color: var(--button-hover-color);
+}
+
+/* Media Query to Hide Dropdown on Mobile and Tablet */
+@media (max-width: 768px) {
+    .dropdown {
+        display: none; /* Hide the dropdown for mobile and tablet */
+    }
+}

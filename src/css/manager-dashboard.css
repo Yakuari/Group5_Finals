@@ -1,0 +1,327 @@
+/* Root Variables */
+:root {
+    --color-black: #0A0A0A;
+    --color-white: #FFFFFF;
+    --color-gray: #1E1E1E;
+    --color-gold: #D4AF37;
+    --color-gold-dark: #BF9B30;
+    --color-overlay: rgba(0, 0, 0, 0.6);
+}
+
+/* General Styles */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: var(--color-gray);
+    color: var(--color-white);
+}
+
+h1 {
+    text-align: center;
+    padding: 20px 0;
+    background-color: var(--color-gold);
+    color: var(--color-black);
+    margin: 0;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+h2 {
+    margin-top: 40px;
+    font-size: 24px;
+    text-align: center;
+    color: var(--color-gold);
+}
+
+/* Navigation Bar */
+header {
+    background-color: var(--color-black);
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+nav {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px 20px;
+}
+
+.nav-container {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+}
+
+.nav-links {
+    display: flex;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    gap: 20px;
+}
+
+.nav-links li {
+    position: relative;
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: var(--color-gold);
+    font-weight: bold;
+    font-size: 16px;
+    padding: 10px 15px;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+}
+
+.nav-links a:hover {
+    background-color: var(--color-gray);
+}
+
+.logo-container {
+    display: flex;
+    align-items: center;
+}
+
+.logo {
+    width: 125px;
+    height: auto;
+}
+
+.logo-name {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: var(--color-gold);
+    margin-left: 15px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+}
+
+/* Button Styles */
+.nav-button {
+    margin-left: auto;
+}
+
+button {
+    background-color: var(--color-gold);
+    color: var(--color-black);
+    border: none;
+    border-radius: 5px;
+    padding: 10px 15px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+button:hover {
+    background-color: var(--color-gold-dark);
+}
+
+button a {
+    text-decoration: none;
+    color: var(--color-black);
+}
+
+/* Table Styles */
+table {
+    width: 95%;
+    margin: 20px auto;
+    border-collapse: collapse;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    background-color: var(--color-black);
+    color: var(--color-white);
+}
+
+th, td {
+    padding: 12px 15px;
+    border: 1px solid var(--color-gray);
+    text-align: left;
+}
+
+th {
+    background-color: var(--color-gold-dark);
+    color: var(--color-white);
+}
+
+tr:nth-child(even) {
+    background-color: var(--color-overlay);
+}
+
+tr:hover {
+    background-color: var(--color-gray);
+}
+
+.actions {
+    text-align: center;
+}
+
+button {
+    padding: 8px 12px;
+    margin: 2px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 14px;
+}
+
+button[name="action"][value="accept"] {
+    background-color: var(--color-gold);
+    color: var(--color-black);
+}
+
+button[name="action"][value="reject"] {
+    background-color: var(--color-black);
+    color: var(--color-white);
+}
+
+button:hover {
+    opacity: 0.9;
+}
+
+/* Form Styles */
+form {
+    display: inline;
+    margin: 20px auto;
+    padding: 10px;
+    background-color: var(--color-black);
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.form-element {
+    margin-bottom: 15px;
+}
+
+.form-element input {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid var(--color-gray);
+    border-radius: 5px;
+    font-size: 1rem;
+}
+
+/* Message Styles */
+.message {
+    background-color: rgba(0, 255, 0, 0.1);
+    border: 1px solid green;
+    padding: 10px;
+    text-align: center;
+    margin: 10px 0;
+}
+
+.error {
+    background-color: rgba(255, 0, 0, 0.1);
+    border: 1px solid red;
+    padding: 10px;
+    text-align: center;
+    margin: 10px 0;
+}
+
+/* Responsive Design */
+@media (max-width: 1200px) { /* Large Laptops */
+    h1 {
+        font-size: 28px; /* Adjust heading size */
+    }
+
+    h2 {
+        font-size: 22px; /* Adjust subheading size */
+    }
+
+    nav {
+        padding: 10px 15px; /* Adjust padding */
+    }
+
+    .nav-links a {
+        font-size: 14px; /* Adjust link font size */
+    }
+
+    table {
+        font-size: 14px; /* Adjust table font size */
+    }
+}
+
+@media (max-width: 992px) { /* Tablets */
+    h1 {
+        font-size: 26px; /* Adjust heading size */
+    }
+
+    h2 {
+        font-size: 20px; /* Adjust subheading size */
+    }
+
+    .nav-links {
+        flex-direction: column; /* Stack links vertically */
+        align-items: center; /* Center align links */
+    }
+
+    .nav-links a {
+        padding: 8px 12px; /* Adjust padding */
+    }
+
+    table {
+        width: 100%; /* Full width for tables */
+    }
+}
+
+@media (max-width: 768px) { /* Small Tablets and Mobile Phones */
+    h1 {
+        font-size: 24px; /* Adjust heading size */
+    }
+
+    h2 {
+        font-size: 18px; /* Adjust subheading size */
+    }
+
+    nav {
+        flex-direction: column; /* Stack navigation items */
+        align-items: center; /* Center align navigation */
+    }
+
+    .nav-links {
+        flex-direction: column; /* Stack links vertically */
+        gap: 10px; /* Space between links */
+    }
+
+    .nav-links a {
+        font-size: 16px; /* Adjust link font size */
+    }
+
+    table {
+        font-size: 12px; /* Adjust table font size */
+    }
+
+    button {
+        padding: 6px 10px; /* Adjust button padding */
+        font-size: 12px; /* Adjust button font size */
+    }
+}
+
+@media (max-width: 480px) { /* Mobile Phones */
+    h1 {
+        font-size: 22px; /* Adjust heading size */
+    }
+
+    h2 {
+        font-size: 16px; /* Adjust subheading size */
+    }
+
+    .nav-links a {
+        font-size: 14px; /* Adjust link font size */
+    }
+
+    table {
+        font-size: 10px; /* Adjust table font size */
+    }
+
+    .form-element input {
+        padding: 8px; /* Adjust input padding */
+    }
+
+    button {
+        padding: 5px 8px; /* Adjust button padding */
+        font-size: 10px; /* Adjust button font size */
+    }
+}
